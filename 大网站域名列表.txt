@@ -1,0 +1,4 @@
+google.com
+bing.com
+baidu.com
+ask.com

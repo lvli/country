@@ -1,0 +1,508 @@
+var domains = {
+    // 'mystart.dealwifi.com':[/^search\/(web|images|video|news)$/i,'q'],
+    'www.bing.com':src6,
+    'a1.bing.com':src6,
+    'cn.bing.com':src6,
+    // v9
+    'www.v9.com': sr1,
+    'v9.com': sr1,
+    'pub.v9.com': sr1,
+    'search.v9.com': sr1,
+    'tr.v9.com': sr1,
+    'mx.v9.com': sr1,
+    'es.v9.com': sr1,
+    'br.v9.com': sr1,
+    'en.v9.com': sr1,
+    // delta-homes
+    'www.delta-homes.com': sr1,
+    'delta-homes.com': sr1,
+    'search.delta-homes.com': sr1,
+    // ask
+    'www.ask.com': sr2,
+    'www.search.ask.com': sr2,
+    'websearch.ask.com': sr2,
+    'image.ask.com': sr2,
+    'news.ask.com': sr2,
+    'map.ask.com': sr2,
+    'maps.ask.com': sr2,
+    'm.ask.com': sr2,
+    'win.ask.com': sr2,
+    'events.ask.com': sr2,
+    'se.ask.com': sr2,
+    'us.ask.com': sr2,
+    'br.ask.com': sr2,
+    'es.ask.com': sr2,
+    'in.ask.com': sr2,
+    'br.ask.com': sr2,
+    'pt.ask.com': sr2,
+    'de.ask.com': sr2,
+    'fr.ask.com': sr2,
+    'ru.ask.com': sr2,
+    'pl.ask.com': sr2,
+    'it.ask.com': sr2,
+    'au.ask.com': sr2,
+    'jp.ask.com': sr2,
+    'kr.ask.com': sr2,
+    'my.ask.com': sr2,
+    'uk.ask.com': sr2,
+    'int.search.tb.ask.com': [
+        /^search\/(GGmain|AJimage|news|video|PRshop|maps|recipe)\.jhtml$/i, 'searchfor'
+    ],
+    // istartsurf
+    'www.istartsurf.com': sr1,
+    'istartsurf.com': sr1,
+    // aol
+    'search.aol.com': src9,
+    'search.aol.co.uk':src9,
+    // mystartsearch
+    'www.mystartsearch.com': sr1,
+    'mystartsearch.com': sr1,
+    // yoursites123
+    'www.yoursites123.com': sr1,
+    'yoursites123.com': sr1,
+    // go.mail.ru
+    'go.mail.ru': [
+        /^(search|search_images|search_video|search_apps|news|realtime|search_otvet)\/*$/i, 'q'
+    ],
+    // yandex
+    'www.yandex.com': sr3,
+    'yandex.com': sr3,
+    'www.yandex.net': sr3,
+    'yandex.net': sr3,
+    'www.yandex.ru': sr3,
+    'yandex.ru': sr3,
+    'www.yandex.ua': sr3,
+    'yandex.ua': sr3,
+    'www.yandex.by': sr3,
+    'yandex.by': sr3,
+    'www.yandex.kz': sr3,
+    'yandex.kz': sr3,
+    'www.yandex.com.tr': sr3,
+    'yandex.com.tr': sr3,
+    'news.yandex.ru': [
+        /^yandsearch\/*$/i, 'text'
+    ],
+    // yahoo
+    'search.yahoo.com': src4,
+    'news.search.yahoo.com': src4,
+    'sg.news.search.yahoo.com': src4,
+    'sports.search.yahoo.com': src4,
+    'finance.search.yahoo.com': src4,
+    'games.search.yahoo.com': src4,
+    'answers.yahoo.com': src4,
+    'br.search.yahoo.com': src4,
+    'br.answers.yahoo.com': src4,
+    'tr.search.yahoo.com': src4,
+    'fr.search.yahoo.com': src4,
+    'fr.answers.yahoo.com': src4,
+    'maktoob.search.yahoo.com': src4,
+    'th.search.yahoo.com': src4,
+    'th.answers.yahoo.com': src4,
+    'in.search.yahoo.com': src4,
+    'in.answers.yahoo.com': src4,
+    'es.search.yahoo.com': src4,
+    'es.answers.yahoo.com': src4,
+    'espanol.search.yahoo.com': src4,
+    'groups.yahoo.com': src4,
+    'de.search.yahoo.com': src4,
+    'vn.search.yahoo.com': src4,
+    'vn.answers.yahoo.com': src4,
+    'uk.search.yahoo.com': src4,
+    'uk.answers.yahoo.com': src4,
+    'tw.search.yahoo.com': src4,
+    'tw.news.search.yahoo.com': src4,
+    'tw.celebrity.search.yahoo.com': src4,
+    'tw.search.buy.yahoo.com': src4,
+    'tw.search.bid.yahoo.com': src4,
+    'tw.search.mall.yahoo.com': src4,
+    'ro.search.yahoo.com': src4,
+    'gr.search.yahoo.com': src4,
+    'id.search.yahoo.com': src4,
+    'id.answers.yahoo.com': src4,
+    'search.yahoo.co.jp': src4,
+    'br.yhs4.search.yahoo.com': src4,
+    'ar.search.yahoo.com': src4,
+    'ar.answers.yahoo.com': src4,
+    'nl.search.yahoo.com': src4,
+    'au.search.yahoo.com': src4,
+    'mx.search.yahoo.com': src4,
+    'ph.search.yahoo.com': src4,
+    'sg.search.yahoo.com': src4,
+    'sg.answers.yahoo.com': src4,
+    'malaysia.search.yahoo.com': src4,
+    'it.search.yahoo.com': src4,
+    'it.answers.yahoo.com': src4,
+    'se.search.yahoo.com': src4,
+    'dk.search.yahoo.com': src4,
+    'hk.search.yahoo.com': src4,
+    'hk.news.search.yahoo.com': src4,
+    'hk.search.auctions.yahoo.com': src4,
+    'hk.search.shop.yahoo.com': src4,
+    'us.yhs4.search.yahoo.com': src4,
+    've.search.yahoo.com': src4,
+    'ch.search.yahoo.com': src4,
+    'tw.rd.yahoo.com': src4,
+    'cl.search.yahoo.com': src4,
+    'at.search.yahoo.com': src4,
+    'co.search.yahoo.com': src4,
+    'fi.search.yahoo.com': src4,
+    'pe.search.yahoo.com': src4,
+    'us.search.yahoo.com': src4,
+    'in.yhs4.search.yahoo.com': src4,
+    'th.yhs4.search.yahoo.com': src4,
+    'es.yhs4.search.yahoo.com': src4,
+    'espanol.search.yahoo.com': src4,
+    'espanol.answers.yahoo.com': src4,
+    'ru.search.yahoo.com': src4,
+    'ca.search.yahoo.com': src4,
+    'ca.groups.yahoo.com': src4,
+    'ca.answers.yahoo.com': src4,
+    'no.search.yahoo.com': src4,
+    'kr.search.yahoo.com': src4,
+    'de.yhs4.search.yahoo.com': src4,
+    'qc.search.yahoo.com': src4,
+    'qc.answers.yahoo.com': src4,
+    // onet.pl
+    'szukaj.onet.pl': [
+        /^(wyniki|wiadomosci,szukaj|multimedia,szukaj|forum,szukaj)\.html$/i, 'qt'
+    ],
+    /*'katalog.onet.pl': [
+        /^katalog\.html$/i, 'qt'
+    ],*/
+    // oursurfing
+    'www.oursurfing.com': sr1,
+    'oursurfing.com': sr1,
+    // omniboxes
+    'www.omniboxes.com': sr1,
+    'omniboxes.com': sr1,
+    // sweet-page
+    'www.sweet-page.com': sr1,
+    'sweet-page.com': sr1,
+    // omiga-plus
+    'isearch.omiga-plus.com': sr1,
+    'start.omiga-plus.com': sr1,
+    'searches.omiga-plus.com': src9,
+    // webssearches
+    'www.webssearches.com': sr1,
+    'webssearches.com': sr1,
+    'search.webssearches.com': src9,
+    // babylon
+    'isearch.babylon.com': src9,
+    // conduit
+    'search.conduit.com': [
+        /^results\.aspx$/i, 'q'
+    ],
+    // istartpageing
+    'www.istartpageing.com': sr1,
+    'istartpageing.com': sr1,
+    // www.google.interia.pl
+    'www.google.interia.pl': [
+        /^szukaj\/*$/i, 'q'
+    ],
+    // trovi
+    'www.trovi.com': [
+        /^results\.aspx$/i, 'q'
+    ],
+    // do-search
+    'www.do-search.com': sr1,
+    'do-search.com': sr1,
+    // key-find
+    'www.key-find.com': sr1,
+    'key-find.com': sr1,
+    // default-search
+    'www.default-search.com': [
+        /^search$/i, 'p'
+    ],
+    // yoursearching
+    'www.yoursearching.com': sr1,
+    'yoursearching.com': sr1,
+    // daum
+    'search.daum.net': [
+        /^search\/*$/i, 'q'
+    ],
+    // search-results
+    'www1.search-results.com':src9,
+    'search-results.ir': [
+        /^$/i, 's'
+    ],
+    // mysites123
+    'www.mysites123.com': sr1,
+    'mysites123.com': sr1,
+    // mysearchresults
+    'www.mysearchresults.com': sr2,
+    // search.seznam.cz
+    'search.seznam.cz': src5,
+    // delta-search
+    'www.delta-search.com': src5,
+    'www1.delta-search.com': src5,
+    'www2.delta-search.com': src5,
+    'mixidj.delta-search.com': src5,
+    // mysearch.avg.com
+    'mysearch.avg.com': [
+        /^search\/*$/i, 'q'
+    ],
+    // isearch.avg.com
+    'isearch.avg.com': src9,
+    // search.sweetim.com
+    'search.sweetim.com': [
+        /^\/*(search|redir)\.asp$/i, 'q'
+    ],
+    // snapdo
+    'search.snapdo.com': src5,
+    // duckduckgo
+    'duckduckgo.com': src5,
+    // buenosearch
+    'www.buenosearch.com': src5,
+    // search.qvo6.com
+    'search.qvo6.com': sr1,
+    // rusearcher
+    'www.rusearcher.com': [
+        /^search\.php$/i, 'query'
+    ],
+    'rusearcher.com': [
+        /^search\.php$/i, 'query'
+    ],
+    // incredibar
+    'search.incredibar.com': [
+        /^(|search\.php)$/i, 'q'
+    ],
+    // awesomehp
+    'www.awesomehp.com': sr1,
+    'awesomehp.com': sr1,
+    // mystart
+    'www.mystart.com': src9,
+    'mystart.com': src9,
+    // qone8
+    'start.qone8.com': sr1,
+    // home.myplaycity
+    'home.myplaycity.com': [
+        /^results\.php$/i, 's'
+    ],
+    // baidu.com
+    /*,'www.baidu.com':[
+    	/^s$/i, 'wd'
+    ]*/
+    // myhome.vi-view.com
+    'myhome.vi-view.com': sr1,
+    // searchgol.com
+    'www.searchgol.com': src5,
+    // searchfunmoods.com
+    'searchfunmoods.com':src9,
+    // google
+    'www.google.com.hk': google_src,
+    'www.google.com': google_src,
+    'www.google.co.in': google_src,
+    'www.google.de': google_src,
+    'www.google.co.uk': google_src,
+    'www.google.co.jp': google_src,
+    'www.google.ru': google_src,
+    'www.google.pl': google_src,
+    'www.google.es': google_src,
+    'www.google.com.tr': google_src,
+    'www.google.ca': google_src,
+    'www.google.com.mx': google_src,
+    'www.google.com.ar': google_src,
+    'www.google.it': google_src,
+    'www.google.com.au': google_src,
+    'www.google.fr': google_src,
+    'www.google.com.ua': google_src,
+    'www.google.co.th': google_src,
+    'www.google.co.id': google_src,
+    'www.google.com.tw': google_src,
+    'www.google.com.co': google_src,
+    'www.google.ro': google_src,
+    'www.google.nl': google_src,
+    'www.google.com.ph': google_src,
+    'www.google.cl': google_src,
+    'www.google.co.ve': google_src,
+    'www.google.com.pe': google_src,
+    'www.google.pt': google_src,
+    'www.google.be': google_src,
+    'www.google.com.eg': google_src,
+    'www.google.hu': google_src,
+    'www.google.gr': google_src,
+    'www.google.com.vn': google_src,
+    'www.google.co.za': google_src,
+    'www.google.cz': google_src,
+    'www.google.bg': google_src,
+    'www.google.se': google_src,
+    'www.google.at': google_src,
+    'www.google.com.ec': google_src,
+    'www.google.co.il': google_src,
+    'www.google.com.pk': google_src,
+    'www.google.com.sa': google_src,
+    // ÑÇÂíÑ·
+    /*'www.amazon.com':amazon,
+    'www.amazon.ca':amazon,
+    'www.amazon.de':amazon,
+    'www.amazon.co.uk':amazon,
+    'www.amazon.fr':amazon,
+    'www.amazon.it':amazon,
+    'www.amazon.co.jp':amazon,
+    'www.amazon.cn':amazon,
+    'www.amazon.com.au':amazon,
+    'www.amazon.com.br':amazon,
+    'www.amazon.in':amazon,
+    'www.amazon.com.mx':amazon,
+    'www.amazon.nl':amazon,*/
+    // suche
+    'suche.1und1.de':src7,
+    'suche.1und1.de':src7,
+    'suche.web.de':src7,
+    'suche.gmx.at':src7,
+    'suche.gmx.ch':src7,
+    'produkte.suche.1und1.de':[
+        /^search\.do$/,'s'
+    ],
+    'produkte.suche.web.de':[
+        /^search\.do$/,'s'
+    ],
+    'suche.t-online.de':[
+        /^fast-cgi\/tsc$/i,'q'
+    ],
+    'suche.freenet.de':[
+        /^suche$/i,'query'
+    ],
+    // GMX
+    'search.mail.com':src7,
+    'search.gmx.co.uk':src7,
+    'search.gmx.es':src7,
+    'search.gmx.fr':src7,
+    'search.gmx.com':src7,
+    'search.1and1.com':src7,
+    // izito
+    'www.izito.com': src9,
+    'www.izito.co.uk':src7,
+    'www.izito.nl':src7,
+    'www.izito.de':src7,
+    'www.izito.at':src7,
+    'www.izito.mx':src7,
+    'www.izito.es':src7,
+    'www.izito.it':src7,
+    'www.izito.fr':src7,
+    'www.izito.com.br':src7,
+    'www.izito.pl':src7,
+    'www.izito.co.il':src7,
+    'www.izito.co.kr':src7,
+    'www.izito.com.my':src7,
+    'www.izito.com.sg':src7,
+    'www.izito.com.tw':src7,
+    'www.izito.com.ua':src7,
+    'www.izito.com.vn':src7,
+    'www.izito.ee':src7,
+    'www.izito.gr':src7,
+    'www.izito.hk':src7,
+    'www.izito.hu':src7,
+    'www.izito.is':src7,
+    'www.izito.jp':src7,
+    'www.izito.lt':src7,
+    'www.izito.lv':src7,
+    'www.izito.ro':src7,
+    'www.izito.rs':src7,
+    'www.izito.si':src7,
+    'www.izito.us':src7,
+    // ebay
+    /*'www.ebay.com':src8,
+    'www.ebay.at':src8,
+    'www.benl.ebay.be':src8,
+    'www.ebay.fr':src8,
+    'www.ebay.de':src8,
+    'www.ebay.it':src8,
+    'www.ebay.nl':src8,
+    'www.ebay.es':src8,
+    'www.ebay.ch':src8,
+    'www.ebay.ie':src8,
+    'www.ebay.pl':src8,
+    'www.ebay.co.uk':src8,
+    'www.ebay.com.au':src8,
+    'www.ebay.ca':src8,
+    'www.ebay.cn':src9,
+    'www.ebay.in':src8,
+    'www.ebay.com.hk':src8,
+    'www.ebay.com.sg':src8,
+    'www.ebay.com.my':src8,
+    'www.ebay.com.tw':[
+        /^gsearch\/index\.html$/i,'ssq'
+    ],
+    'www.ebay.ph':src8,*/
+    'search.goo.ne.jp':[
+        /^web\.jsp$/i,'MT'
+    ],
+    'search.xfinity.com':src9,
+    'nova.rambler.ru':[
+        /^search$/i,'query'
+    ],
+    'szukaj.wp.pl':[
+        /^szukaj\.html$/i,'q'
+    ],
+    'search.myway.com':[
+        /^search\/GGmain\.jhtml$/i,'searchfor'
+    ],
+    'search.avg.com':src9,
+    'fiostrending.verizon.com':src9,
+    'cgi.search.biglobe.ne.jp':[
+        /^cgi-bin\/search2-b$/i,'q'
+    ],
+    'search.pch.com':src9,
+    'frontpage.pch.com':src9,
+    'search.bt.com':[
+        /^result$/i,'p'
+    ],
+    'index.investopedia.com':[
+        /^index\/?$/i,'q'
+    ],
+    'secure.search.sky.com':[
+        /^web$/i,'term'
+    ],
+    'search.iminent.com':[
+        /^.*\/search\/?$/i,'q'
+    ],
+    'www.webcrawler.com':[
+        /^search\/(web|images|video|news)$/i,'ss'
+    ],
+    'search.earthlink.net':src9,
+    'start.centurylink.net':src9,
+    'search.centrum.cz':src9,
+    'najisto.centrum.cz':[
+        /^$/i,'what'
+    ],
+    // zapmeta
+    'www.zapmeta.com':src9,
+    'www.zapmeta.co.in':src9,
+    'www.zapmeta.fr':src9,
+    'www.zapmeta.mx':src9,
+    'www.zapmeta.com.br':src9,
+    'www.zapmeta.com.pl':src9,
+    'www.zapmeta.co.za':src9,
+    'www.zapmeta.ng':src9,
+    'www.zapmeta.ch':src9,
+    'www.zapmeta.se':src9,
+    'www.zapmeta.cl':src9,
+    'www.zapmeta.it':src9,
+    'www.zapmeta.sk':src9,
+    'www.zapmeta.at':src9,
+    'www.zapmeta.cz':src9,
+    'www.zapmeta.co.uk':src9,
+    'www.zapmeta.pt':src9,
+    'yoursearch.me':sr1,
+    'start.toshiba.com':src9,
+    'www.startjuno.com':src9,
+    'www.dogpile.com':src9,
+    'search.infospace.com':src9,
+    'search.mysearch.com':src9,
+    'kereso.startlap.hu':src9,
+    'int.search.mywebsearch.com':[
+        /^(mywebsearch|search)\/\w+\.jhtml$/i,'searchfor'
+    ],
+    'msxml.excite.com':src9,
+    'www.vinden.nl':src9,
+    'www.vinden.be':src9,
+    'www.kensaq.com':src9,
+    'www.findsmarter.com':src9,
+    'index.about.com':src9,
+    'en.allexperts.com':[
+        /^sitesearch\.htm$/i,'terms'
+    ],
+    // test
+    'test.com': src9,
+};
